@@ -7,23 +7,29 @@
 
 #include <iostream>
 #include "StudentTreeInfo.hpp"
+#include "StudentTreeInfo.cpp"
+#include "BST.hpp"
+#include "BST.cpp"
+#include "TNode.hpp"
+#include "TNode.cpp"
+#include "StudInf.hpp"
+#include "StudInf.cpp"
+
 using namespace std;
 
 int main() {
-/************Part 1 - before you've added in the balancing and rotations *****/
-//	StudentTreeInfo *studtree = new StudentTreeInfo("TestRightLeft.txt");
-//	cout << "************************************" << endl;
-/************End of Part 1*********************/
+
+	//StudentTreeInfo *studtree = new StudentTreeInfo("TestRightLeft.txt");
+	//cout << "************************************" << endl;
 
 
-/************Part 2 - for testing left rotations *****/
 /* Please comment out part 1 before testing this part */
-//	StudentTreeInfo *studtree = new StudentTreeInfo("Testleft.txt");
-//	cout << "************************************" << endl;
-//	studtree->tree->clearTree();
-//
-//	delete studtree;
-/**********End of Part 2 *************************/
+	StudentTreeInfo *studtree = new StudentTreeInfo("Testleft.txt");
+	cout << "************************************" << endl;
+	studtree->tree->clearTree();
+
+	delete studtree;
+
 
 
 /***** Part 3 testing the right-right rotations *****/
@@ -85,9 +91,7 @@ int main() {
 //	delete studtree;
 
 /*****And now for the big tree!!!  Part 7 *************/
-	StudentTreeInfo *studtree = new StudentTreeInfo("StudentAnswers.txt");
-	studtree->Interface();
+//	StudentTreeInfo *studtree = new StudentTreeInfo("StudentAnswers.txt");
+//	studtree->Interface();
 	return 0;
 }
-
-
