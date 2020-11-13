@@ -385,10 +385,18 @@ TNode *BST::rotateLeft(TNode *tmp){
 		tmp->height = tRH + 1;
 	}
 
-	if(newRoot->left->height > newRoot->right->height){
-		newRoot->height = newRoot->left->height + 1;
+	int nLH = 0;
+	int nRH = 0;
+	if(newRoot->right){
+		tLH = tmp->right->height;
+	}
+	if(newRoot->left){
+		tRH = tmp->left->height;
+	}
+	if(nLH > nRH){
+		newRoot->height = tLH + 1;
 	} else {
-		newRoot->height = newRoot->right->height + 1;
+		newRoot->height = tRH + 1;
 	}
 
 	return newRoot;
@@ -435,10 +443,18 @@ TNode *BST::rotateRight(TNode *tmp){
 		tmp->height = tRH + 1;
 	}
 
-	if(newRoot->left->height > newRoot->right->height){
-		newRoot->height = newRoot->left->height + 1;
+	int nLH = 0;
+	int nRH = 0;
+	if(newRoot->right){
+		tLH = tmp->right->height;
+	}
+	if(newRoot->left){
+		tRH = tmp->left->height;
+	}
+	if(nLH > nRH){
+		newRoot->height = tLH + 1;
 	} else {
-		newRoot->height = newRoot->right->height + 1;
+		newRoot->height = tRH + 1;
 	}
 
 
