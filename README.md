@@ -1,6 +1,6 @@
-# BinarySearchTree
+# AVL Balanced Binary Search Tree
 ### Cisc 260 *Caleb Davis*
-Binary Search Tree in C++
+AVL Binary Search Tree in C++
 
 ### Screenshots:
 ![alt text](https://github.com/Khaleeb/BinarySearchTree/blob/main/Screenshots/insertAndPrinting.png "Inserting and Printing")
@@ -11,8 +11,8 @@ Binary Search Tree in C++
 
 ### To Build:
 ```
-make BinarySearchTree
-./BinarySearchTree
+make BalancedBST
+./BalancedBST
 ```
 
 ### To Clean:
