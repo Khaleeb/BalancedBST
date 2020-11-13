@@ -24,6 +24,7 @@ int main() {
 
 
 /* Please comment out part 1 before testing this part */
+/*
 	StudentTreeInfo *studtree = new StudentTreeInfo("Testleft.txt");
 	cout << "************************************" << endl;
 	studtree->tree->clearTree();
@@ -42,12 +43,12 @@ int main() {
 /************End of Part 3 **********************/
 
 /***** Part 4 testing the right-left rotations *****/
-	cout << "********* Testing rightleft ************" << endl;
-	studtree = new StudentTreeInfo("TestRightLeft.txt");
-	cout << "************************************" << endl;
-	studtree->tree->clearTree();
+//	cout << "********* Testing rightleft ************" << endl;
+//	studtree = new StudentTreeInfo("TestRightLeft.txt");
+//	cout << "************************************" << endl;
+//	studtree->tree->clearTree();
 
-	delete studtree;
+// delete studtree;
 /****************End of Part 4 **************************/
 
 
@@ -65,7 +66,7 @@ int main() {
 /* Note: make sure you leave Part 5 in so you have a tree to remove from */
 
 //	cout <<endl<<endl<< "********* Testing Removing ************" << endl;
-//
+
 //	/***** Removing student with no kids *******/
 //	cout << "Removing No Children (Arachnea Adams)"<<endl;
 //	studtree->tree->remove("Adams","Arachnea");
@@ -91,7 +92,7 @@ int main() {
 //	delete studtree;
 
 /*****And now for the big tree!!!  Part 7 *************/
-//	StudentTreeInfo *studtree = new StudentTreeInfo("StudentAnswers.txt");
-//	studtree->Interface();
+	StudentTreeInfo *studtree = new StudentTreeInfo("StudentAnswers.txt");
+	studtree->Interface();
 	return 0;
 }

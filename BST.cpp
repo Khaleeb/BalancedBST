@@ -20,8 +20,9 @@ bool BST::insert(string sarr[]){
 	if(root == NULL){
 		root = new TNode(sarr);
 		return true;
-	}
-	else {
+	} else if (find(sarr[0], sarr[3])){
+		cout << "Already in tree: " << sarr[0] << ", " << sarr[3] << endl;
+	} else {
 		TNode *n = root;
 		string sF = sarr[3];
 		string sL = sarr[0];
@@ -68,7 +69,7 @@ TNode *BST::find(string l, string f){
 	TNode *n = root;
 	int c = 1;
 	while (n){
-		if (n->student->last == l && n->student->first == f){
+		if (l.compare(n->student->last) == 0 && f.compare(n->student->first) == 0){
 			break;
 		} else if (l.compare(n->student->last) < 0 || (l.compare(n->student->last) == 0 && f.compare(n->student->first) < 0)){
 				n = n->left;
@@ -77,7 +78,11 @@ TNode *BST::find(string l, string f){
 		}
 		c++;
 	}
-	cout << "FIND: number of comparisons: " << c << endl;
+	if(n){
+		cout << "Found " << n->student->last << ": number of comparisons: " << c << endl;
+	} else {
+		cout << "not found" << endl;
+	}
 	return n;
 
 }
@@ -208,7 +213,7 @@ TNode *BST::removeOneKid(TNode *tmp, bool leftFlag){
 }
 
 TNode *BST::remove(string s, string l){
-	TNode *tmp = find(l,s);
+	TNode *tmp = find(s,l);
 	if(tmp->left == NULL && tmp->right == NULL){
 		removeNoKids(tmp);
 	} else if (tmp->left == NULL){
@@ -299,11 +304,9 @@ void BST::setHeight(TNode *n){
 	if(bal > 1){
 		if(getBalance(n->left) == 1){
 			// Rotate around n
-			cout << "left-left rotate around " << n->student->last << ", " << n->student->first << endl;
 			rotateRight(n);
 		} else if (getBalance(n->left) == -1){
 			// Rotate around n-left
-			cout << "left-right rotate around " << n->student->last << ", " << n->student->first << endl;
 			rotateLeft(n->left);
 			// Rotate around n
 			rotateRight(n);
@@ -313,14 +316,11 @@ void BST::setHeight(TNode *n){
 	} else if (bal < -1){
 		if (getBalance(n->right) == -1){
 			// Rotate around n
-			cout << "right-right rotate around " << n->student->last << ", " << n->student->first << endl;
 			rotateLeft(n);
 		} else if (getBalance(n->right) == 1){
 			// Rotate around n-right
-			cout << "right-left rotate around " << n->student->last << ", " << n->student->first << endl;
-			cout << "Rotating: " << rotateRight(n->right)->student->last << " done";
+			rotateRight(n->right);
 			// rotate around n
-			cout << "Rotating:asdasda" << endl;
 			rotateLeft(n);
 		}
 	}
@@ -345,7 +345,6 @@ int BST::getBalance(TNode *tmp){
 }
 
 TNode *BST::rotateLeft(TNode *tmp){
-	cout << "Rotating left around " << tmp->student->last << endl;
 	TNode *above = tmp->parent;
 	TNode *newRoot = tmp->right;
 	TNode *tree2 = newRoot->left;
@@ -363,11 +362,9 @@ TNode *BST::rotateLeft(TNode *tmp){
 		} else {
 			newRoot->parent->left = newRoot;
 		}
-		cout << "New parent tree for new Root: " << newRoot->parent->student->last << endl;
 	} else {
 		root = newRoot;
 		root->parent = NULL;
-		cout << "New root is: " << root->student->last << endl;
 	}
 
 	// Setting Heights
@@ -403,7 +400,6 @@ TNode *BST::rotateLeft(TNode *tmp){
 }
 
 TNode *BST::rotateRight(TNode *tmp){
-	cout << "Rotating right around " << tmp->student->last << endl;
 	TNode *above = tmp->parent;
 	TNode *newRoot = tmp->left;
 	TNode *tree2 = newRoot->right;
@@ -421,11 +417,9 @@ TNode *BST::rotateRight(TNode *tmp){
 		} else {
 			newRoot->parent->right = newRoot;
 		}
-		cout << "New parent tree for new Root: " << newRoot->parent->student->last << endl;
 	} else {
 		root = newRoot;
 		root->parent = NULL;
-		cout << "New root is: " << root->student->last << endl;
 	}
 
 	// Setting Heights
