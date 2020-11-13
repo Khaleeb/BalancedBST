@@ -299,9 +299,11 @@ void BST::setHeight(TNode *n){
 	if(bal > 1){
 		if(getBalance(n->left) == 1){
 			// Rotate around n
+			cout << "left-left rotate around " << n->student->last << ", " << n->student->first << endl;
 			rotateRight(n);
 		} else if (getBalance(n->left) == -1){
 			// Rotate around n-left
+			cout << "left-right rotate around " << n->student->last << ", " << n->student->first << endl;
 			rotateLeft(n->left);
 			// Rotate around n
 			rotateRight(n);
@@ -311,11 +313,14 @@ void BST::setHeight(TNode *n){
 	} else if (bal < -1){
 		if (getBalance(n->right) == -1){
 			// Rotate around n
+			cout << "right-right rotate around " << n->student->last << ", " << n->student->first << endl;
 			rotateLeft(n);
 		} else if (getBalance(n->right) == 1){
 			// Rotate around n-right
-			rotateRight(n->right);
+			cout << "right-left rotate around " << n->student->last << ", " << n->student->first << endl;
+			cout << "Rotating: " << rotateRight(n->right)->student->last << " done";
 			// rotate around n
+			cout << "Rotating:asdasda" << endl;
 			rotateLeft(n);
 		}
 	}
@@ -340,6 +345,7 @@ int BST::getBalance(TNode *tmp){
 }
 
 TNode *BST::rotateLeft(TNode *tmp){
+	cout << "Rotating left around " << tmp->student->last << endl;
 	TNode *above = tmp->parent;
 	TNode *newRoot = tmp->right;
 	TNode *tree2 = newRoot->left;
@@ -357,8 +363,11 @@ TNode *BST::rotateLeft(TNode *tmp){
 		} else {
 			newRoot->parent->left = newRoot;
 		}
+		cout << "New parent tree for new Root: " << newRoot->parent->student->last << endl;
 	} else {
 		root = newRoot;
+		root->parent = NULL;
+		cout << "New root is: " << root->student->last << endl;
 	}
 
 	// Setting Heights
@@ -386,6 +395,7 @@ TNode *BST::rotateLeft(TNode *tmp){
 }
 
 TNode *BST::rotateRight(TNode *tmp){
+	cout << "Rotating right around " << tmp->student->last << endl;
 	TNode *above = tmp->parent;
 	TNode *newRoot = tmp->left;
 	TNode *tree2 = newRoot->right;
@@ -403,8 +413,11 @@ TNode *BST::rotateRight(TNode *tmp){
 		} else {
 			newRoot->parent->right = newRoot;
 		}
+		cout << "New parent tree for new Root: " << newRoot->parent->student->last << endl;
 	} else {
 		root = newRoot;
+		root->parent = NULL;
+		cout << "New root is: " << root->student->last << endl;
 	}
 
 	// Setting Heights
@@ -427,6 +440,7 @@ TNode *BST::rotateRight(TNode *tmp){
 	} else {
 		newRoot->height = newRoot->right->height + 1;
 	}
+
 
 	return newRoot;
 }

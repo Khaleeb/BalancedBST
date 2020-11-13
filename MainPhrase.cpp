@@ -32,22 +32,22 @@ int main() {
 
 
 
-/***** Part 3 testing the right-right rotations *****/
-//	cout << "********* Testing right ************" << endl;
-//	studtree = new StudentTreeInfo("TestRight.txt");
-//	cout << "************************************" << endl;
-//	studtree->tree->clearTree();
-//
-//	delete studtree;
+
+	cout << "********* Testing right ************" << endl;
+	studtree = new StudentTreeInfo("TestRight.txt");
+	cout << "************************************" << endl;
+	studtree->tree->clearTree();
+
+	delete studtree;
 /************End of Part 3 **********************/
 
 /***** Part 4 testing the right-left rotations *****/
-//	cout << "********* Testing rightleft ************" << endl;
-//	studtree = new StudentTreeInfo("TestRightLeft.txt");
-//	cout << "************************************" << endl;
-//	studtree->tree->clearTree();
-//
-//	delete studtree;
+	cout << "********* Testing rightleft ************" << endl;
+	studtree = new StudentTreeInfo("TestRightLeft.txt");
+	cout << "************************************" << endl;
+	studtree->tree->clearTree();
+
+	delete studtree;
 /****************End of Part 4 **************************/
 
 
