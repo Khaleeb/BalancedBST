@@ -2,13 +2,6 @@
 ### Cisc 260 *Caleb Davis*
 AVL Binary Search Tree in C++
 
-### Screenshots:
-![alt text](https://github.com/Khaleeb/BinarySearchTree/blob/main/Screenshots/insertAndPrinting.png "Inserting and Printing")
-![alt text](https://github.com/Khaleeb/BinarySearchTree/blob/main/Screenshots/removeNoKids.png "Removing No Kids")
-![alt text](https://github.com/Khaleeb/BinarySearchTree/blob/main/Screenshots/removeOneKid.png "Remove One Kid")
-![alt text](https://github.com/Khaleeb/BinarySearchTree/blob/main/Screenshots/removeTwoKids.png "Remove Two Kids")
-![alt text](https://github.com/Khaleeb/BinarySearchTree/blob/main/Screenshots/removeRootTwoKids.png "Remove Two Kids Root")
-
 ### To Build:
 ```
 make BalancedBST
@@ -19,3 +12,14 @@ make BalancedBST
 ```
 make clean
 ```
+
+### Screenshots:
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/pre-balanced.PNG "pre-balanced")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/testLeft.PNG "right-right rotate")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/testRight.PNG "left-left rotate")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/testRightLeft.PNG "right-left rotate")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/testLeftRight.PNG "left-right rotate")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/removeNoChildren.PNG "Removing No Kids")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/removeOneKid.PNG "Remove One Kid")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/removeTwoKids.PNG "Remove Two Kids")
+![alt text](https://github.com/Khaleeb/BalancedBST/blob/main/Screenshots/FindandRemoveStudent.PNG "Larger file: find and remove student")
